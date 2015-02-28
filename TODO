@@ -1,0 +1,44 @@
+
+ ------DONE ----------
+- create more interactive graphs --> Done
+ - 2. time tracked (deadtime) --> DONE
+ - 3. time between events --> DONE
+ - 4. between planning event and actual event --> DONE
+ - store user data on backend --> DONE
+ - store json data --> DONE
+ - send welcome email --> DONE
+  - ngrams --> DONE
+
+
+ ------TODO ----------
+ - create filters (narrow by label) --> DO NOT work on calendar update??
+    - store and load user's filters
+
+
+ - CSS on graphs, landing page, etc.
+
+ - personas
+ - actually analyze ppl's data
+ - demo data: what will happen if they click the button
+ 
+
+--- LATER ---
+ - Cluster types of days, day bar chart. 
+ - time of day vs. labels events
+ - add calendar chart
+ - ngrams cluster, and add plural
+ - filters: add label for how many events this includes
+
+ --- --- --- --- 
+ - get user data (who created the event) and rank calendar importance with it
+ - gmail integration
+
+
+ - preation histogram
+ - time between events histogram
+
+
+--- LATER ---
+ - machine learning
+	 - RF to predict untracked time
+

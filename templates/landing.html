@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title>Welcome to Papaya</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+		<script type = "text/javascript" src = "{{url_for('static', filename='js/google.js')}}"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<!-- customized css sheets -->
+		<link href="{{url_for('static', filename='css/cover.css')}}" rel="stylesheet">
+		
+	</head> 
+
+	<body>
+
+		<div class="site-wrapper container" id="gConnect">
+
+	      <div class="site-wrapper-inner">
+
+	        <div class="cover-container">
+
+	        
+	          <div class="masthead clearfix">
+	            <div class="inner">
+	              <h3 class="masthead-brand">Papaya</h3>
+	              
+	              <ul class="nav masthead-nav">
+	                <li class="active"><a href="#">Home</a></li>
+	                <li><a href="#">People</a></li>
+	              </ul>
+	          		
+	            </div>
+	          </div>
+	          
+
+	          <div class="inner cover">
+	            <h1 class="cover-heading">Welcome to Papaya.</h1>
+	            <p class="lead">Papaya is a web app that analyzes your Google Calendar. We display graphical visualizations of your calendar data to provide relevant insights into how you spend your time. </p>
+	            <p class="lead">We welcome existing and aspiring "Quantified Self" enthusiasts: How much time do you spend on your top five hobbies? What percentage of your time do you actually track? How many meetings do you go to throughout the week?</p>
+	            <p class="lead"> Connect your Google Calendar to discover your temporal sense of self.</p>
+	            <p class="lead">
+	              <button class="g-signin"
+						data-scope="profile email https://www.googleapis.com/auth/calendar"
+						data-clientId="738659582111-7bhr1v92qurqb93g0pr1a41d27ug9t6r.apps.googleusercontent.com"
+						data-callback="onSignInCallback"
+						data-theme="dark"
+						data-cookiepolicy="single_host_origin">
+					</button>
+	            </p>
+
+	          </div>
+
+	          
+	          <div class="mastfoot">
+	            <div class="inner">
+	              <p>Privacy Policy: We utilize the Google Calendar API to collect your calendar information. We will not share or sell your data. </p>
+	            </div>
+	          </div>
+	      
+
+	        </div>
+
+	      </div>
+
+	    </div>
+
+	</body>
+
+</html>

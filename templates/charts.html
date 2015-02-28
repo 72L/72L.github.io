@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title>Welcome to Papaya</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+		<script type = "text/javascript" src = "{{url_for('static', filename='js/stopwords.js')}}"></script>
+		<script type = "text/javascript" src = "{{url_for('static', filename='js/visualize.js')}}"></script>
+		<script type = "text/javascript" src = "{{url_for('static', filename='js/google.js')}}"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+		
+	</head> 
+
+	<body>
+
+		<div class="site-wrapper container" id="gConnect">
+
+	          <div class="hidden">
+	              <button class="g-signin"
+						data-scope="profile email https://www.googleapis.com/auth/calendar"
+						data-clientId="738659582111-7bhr1v92qurqb93g0pr1a41d27ug9t6r.apps.googleusercontent.com"
+						data-callback="onSignInCallback"
+						data-theme="dark"
+						data-cookiepolicy="single_host_origin">
+					</button>
+	          </div>
+
+	    </div>
+
+	    	<div class="row" id="progress" style="display:none">
+				<div class=" col-md-12">
+				    <div class="progress" style="height:7px">
+					  <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+					  </div>
+					</div>
+				</div>
+			</div>
+
+		<div class="container">
+
+			<!--*************** USER CONTROLS ***************-->
+			<div class="row" id="authOps" style="display:none">
+
+				<div  id="greeting" class='row'>
+					<div class="col-md-6 col-md-offset-3">
+						<h2>Hello!</h2> 
+					</div>
+				</div>
+				<div  class='row'>
+					<!--*************** SELECT CALENDAR -->
+					<div class="col-md-6 col-md-offset-3">
+						
+						<p>Select the calendars you use most:</p>
+						<div class="panel panel-default">
+							<div class="panel-body" id="calendar-select" style="overflow:scroll; height:300px;">
+							<!--filled in with JS-->
+							</div>
+						</div>
+						
+						<button id="calendar-select-button" class="btn btn-default" type="button">Select Calendars &#187;</button>
+					</div><!--END SELECT CALENDAR -->
+				</div>
+				<!--*************** SELECT FILTER 
+				<div class="col-md-6">
+					<p>Select Labels to Show:</p>
+					<div class="panel panel-default">
+						<div class="panel-body" id="filter-select" style="overflow:scroll; height:150px;">
+						
+						</div>
+					</div>
+					<button id="filter-select-button" class="btn btn-default" type="button">Display/Refresh &#187;</button>
+				</div> <-END SELECT FILTER-->
+			</div>
+			<!--*************** END USER CONTROLS ***************-->
+
+
+			<div id="dashboard_div" style="visibility:hidden">
+				<hr/>
+
+				<div  class='row'>
+					<div id="deadtime_jumbo" class="text-center jumbotron col-md-4">
+					  <h1>8 hrs</h1>
+					  <p>AVG. DAILY EVENTS</p>
+					  <p class="compare">That's better than 99% of our user base.</p>
+					</div>
+					<div id="preplan_jumbo" class="text-center jumbotron col-md-4">
+					  <h1>7 days</h1>
+					  <p>AVG. PRE-PLANNING</p>
+					  <p class="compare">That's better than 99% of our user base.</p>
+					</div>
+					<div id='inbetween_jumbo' class="text-center jumbotron col-md-4">
+					  <h1>1.5hrs</h1>
+					  <p>AVG. IN-BETWEEN TIME</p>
+					  <p class="compare">That's better than 99% of our user base.</p>
+					</div>
+				</div>
+
+				<!--
+				<div class='row'>
+					<div id='persona_jumbo' class="jumbotron col-md-12">
+					  <p>YOUR CALENDAR PERSONA</p>
+					  <h1>Planner</h1>
+					  <p class="compare">That's better than 99% of our user base.</p>
+					</div>
+				</div>
+				-->
+				
+				<div >
+					<div  id='filter_div'></div>
+				</div>
+				<div class='hidden'>
+					<div class="col-md-12" id='filter_div2'></div>
+				</div>
+			
+
+				<div  class='row'>
+					<div class="col-md-12" id="chart_div4" style="height: 300px;">
+						<center><img src="./loading.gif" style="width: 100px; height: 100px;" align="middle"/> loading...</center>
+					</div>
+					<div class="col-md-12" id="chart_div5" style="height: 300px;">
+						<center><img src="./loading.gif" style="width: 100px; height: 100px;" align="middle"/> loading...</center>
+					</div>
+					<div class="col-md-12" id="chart_div" style="height: 300px;">
+						<center><img src="./loading.gif" style="width: 100px; height: 100px;" align="middle"/> loading...</center>
+					</div>
+				</div>
+
+			</div>
+
+			<hr/>
+			<div  id='show_filters' class='row'>
+
+				<h2>View and Edit Filters</h2> 
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>
